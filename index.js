@@ -43,3 +43,19 @@ for (let i = 1; i <= 5; i++) {
     console.log(randomNumber);
 }
 
+console.clear();
+console.log(`------------------------`);
+
+//5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
+
+while (true) {
+    let randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+    console.log(randomNumber);
+
+    if (randomNumber === 5) {
+        break;
+    }
+}
+
+
+
