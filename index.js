@@ -14,3 +14,11 @@ if (number1 == number2) {
     console.log(`Skaičius number1 yra mazesnis už number2`);
 }
 
+console.clear();
+console.log(`------------------------`);
+
+//2. Naudojant for ciklą, išvesti į konsolę skaičius nuo 1 iki 10. (5 taškai)
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
