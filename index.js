@@ -70,20 +70,19 @@ const arrayLenght = Math.floor(Math.random() * (30 - 20 + 1) + 20);
 console.log(`Masyvo ilgis --> ${arrayLenght}`);
 
 for (let i = 0; i < arrayLenght; i++) {
-    array.push(Math.floor(Math.random() * (30 - 10 + 1) + 10)); 
+    array.push(Math.floor(Math.random() * (30 - 10 + 1) + 10));
 }
 
 console.log(array);
 
 
-
 let maxValue = 0;
 
 for (let i = 0; i < array.length; i++) {
-   
-    if (array [i] > maxValue ) {
-        maxValue = array [i];
-    }    
+
+    if (array[i] > maxValue) {
+        maxValue = array[i];
+    }
 }
 console.log(`Didziausia masyvo reiksme --> ${maxValue}`);
 
@@ -140,7 +139,6 @@ for (let i = 0; i < arrayLetters.length; i++) {
         countD += 1;
     }
 
-
 }
 
 console.log(arrayLetters);
@@ -159,36 +157,36 @@ console.log(`------------------------`);
 
 
 function lygineSuma(a, b) {
-  
-   
+
+
     if (
-      (typeof a === 'number' || Array.isArray(a)) &&
-      (typeof b === 'number' || Array.isArray(b))
+        (typeof a === 'number' || Array.isArray(a)) &&
+        (typeof b === 'number' || Array.isArray(b))
     ) {
-      
 
 
-      if (typeof a === 'number' && typeof b === 'number') {
-        if (a % 2 === 0 && b % 2 === 0) {
-          return a + b;
+
+        if (typeof a === 'number' && typeof b === 'number') {
+            if (a % 2 === 0 && b % 2 === 0) {
+                return a + b;
+            }
         }
-      }
-      
-      if (Array.isArray(a) && Array.isArray(b)) {
-        const lyginiaiA = a.filter(num => typeof num === 'number' && num % 2 === 0);
-        const lyginiaiB = b.filter(num => typeof num === 'number' && num % 2 === 0);
-        const sumaA = lyginiaiA.reduce((sum, num) => sum + num, 0);
-        const sumaB = lyginiaiB.reduce((sum, num) => sum + num, 0);
-        return sumaA + sumaB;
-      }
+
+        if (Array.isArray(a) && Array.isArray(b)) {
+            const lyginiaiA = a.filter(num => typeof num === 'number' && num % 2 === 0);
+            const lyginiaiB = b.filter(num => typeof num === 'number' && num % 2 === 0);
+            const sumaA = lyginiaiA.reduce((sum, num) => sum + num, 0);
+            const sumaB = lyginiaiB.reduce((sum, num) => sum + num, 0);
+            return sumaA + sumaB;
+        }
     }
 
     return `kintamieji a ir b nera abu skaiciai arba abu masyvai, arba nera dvieju lyginiu skaitmenu kiriuos butu galima sudeti`;
-  }
-  
+}
 
-  console.log(lygineSuma(8, 12)); 
-  console.log(lygineSuma([5, 7, 6], [6, 1, 2])); 
+
+console.log(lygineSuma(8, 12));
+console.log(lygineSuma([5, 7, 6], [6, 1, 2]));
 
 console.clear();
 console.log(`------------------------`);
@@ -216,6 +214,40 @@ function pirminisSkaicius(skaicius) {
 }
 
 console.log(pirminisSkaicius(1));
+
+console.clear();
+console.log(`------------------------`);
+
+// 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą.
+// Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - 
+// "(XXX) XXX-XXXX". (10 taškų)
+
+function telefonoNumeris(masyvas) {
+    let atsakymas = ``;
+
+
+    if (!Array.isArray(masyvas)) {
+        atsakymas = 'Kintamasis nėra masyvas.';
+    } else if (masyvas.length !== 10) {
+        atsakymas = "Masyvo elementų skičius nėra 10";
+    } else {
+
+        const arVisiSkaiciai = masyvas.every(function (element) {
+            return typeof element === "number";
+        });
+
+        if (arVisiSkaiciai) {
+            atsakymas = `(${masyvas[0]}${masyvas[1]}${masyvas[2]}) ${masyvas[3]}${masyvas[4]}${masyvas[5]}-${masyvas[6]}${masyvas[7]}${masyvas[8]}${masyvas[9]}`;
+
+        } else {
+            atsakymas = "Masyvo elementai nėra visi skaičiai.";
+        }
+
+    }
+    return atsakymas;
+}
+console.log(telefonoNumeris([0, 8, 6, 0, 7, 9, 3, 6, 0, 1]));
+
 
 
 
