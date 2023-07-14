@@ -149,5 +149,40 @@ console.log(`"arrayLetters" masyve "B" raidės yra vienetai: ${countB}`);
 console.log(`"arrayLetters" masyve "C" raidės yra vienetai: ${countC}`);
 console.log(`"arrayLetters" masyve "D" raidės yra vienetai: ${countD}`);
 
+console.clear();
+console.log(`------------------------`);
+
+function lygineSuma(a, b) {
+  
+   
+    if (
+      (typeof a === 'number' || Array.isArray(a)) &&
+      (typeof b === 'number' || Array.isArray(b))
+    ) {
+      
+
+
+      if (typeof a === 'number' && typeof b === 'number') {
+        if (a % 2 === 0 && b % 2 === 0) {
+          return a + b;
+        }
+      }
+      
+      if (Array.isArray(a) && Array.isArray(b)) {
+        const lyginiaiA = a.filter(num => typeof num === 'number' && num % 2 === 0);
+        const lyginiaiB = b.filter(num => typeof num === 'number' && num % 2 === 0);
+        const sumaA = lyginiaiA.reduce((sum, num) => sum + num, 0);
+        const sumaB = lyginiaiB.reduce((sum, num) => sum + num, 0);
+        return sumaA + sumaB;
+      }
+    }
+
+    return `kintamieji a ir b nera abu skaiciai arba abu masyvai, arba nera dvieju lyginiu skaitmenu kiriuos butu galima sudeti`;
+  }
+  
+
+  console.log(lygineSuma(8, 12)); 
+  console.log(lygineSuma([5, 7, 6], [6, 1, 2])); 
+
 
 
