@@ -87,3 +87,67 @@ for (let i = 0; i < array.length; i++) {
 }
 console.log(`Didziausia masyvo reiksme --> ${maxValue}`);
 
+console.clear();
+console.log(`------------------------`);
+
+// 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. 
+//Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
+
+
+let = arrayLetters = [];
+
+for (let i = 0; i < 100; i++) {
+    const letter = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+
+    if (letter === 1) {
+        arrayLetters.push(`A`);
+    }
+
+    if (letter === 2) {
+        arrayLetters.push(`B`);
+    }
+
+    if (letter === 3) {
+        arrayLetters.push(`C`);
+    }
+
+    if (letter === 4) {
+        arrayLetters.push(`D`);
+    }
+
+}
+
+let countA = 0;
+let countB = 0;
+let countC = 0;
+let countD = 0;
+
+for (let i = 0; i < arrayLetters.length; i++) {
+
+    if (arrayLetters[i] === 'A') {
+        countA += 1;
+    }
+
+    if (arrayLetters[i] === 'B') {
+        countB += 1;
+    }
+
+    if (arrayLetters[i] === 'C') {
+        countC += 1;
+    }
+
+    if (arrayLetters[i] === 'D') {
+        countD += 1;
+    }
+
+
+}
+
+console.log(arrayLetters);
+console.log(`"arrayLetters" masyve "A" raidės yra vienetai: ${countA}`);
+console.log(`"arrayLetters" masyve "B" raidės yra vienetai: ${countB}`);
+console.log(`"arrayLetters" masyve "C" raidės yra vienetai: ${countC}`);
+console.log(`"arrayLetters" masyve "D" raidės yra vienetai: ${countD}`);
+
+
+
