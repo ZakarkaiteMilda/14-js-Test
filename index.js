@@ -152,6 +152,12 @@ console.log(`"arrayLetters" masyve "D" raidės yra vienetai: ${countD}`);
 console.clear();
 console.log(`------------------------`);
 
+// 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. 
+//Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
+//Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. 
+//Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
+
+
 function lygineSuma(a, b) {
   
    
@@ -183,6 +189,36 @@ function lygineSuma(a, b) {
 
   console.log(lygineSuma(8, 12)); 
   console.log(lygineSuma([5, 7, 6], [6, 1, 2])); 
+
+console.clear();
+console.log(`------------------------`);
+
+// 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį. Turi būti patikrinimas, 
+//kad kintamasis yra skaičius. Funkcija turi grąžinti ar pateiktas skaičius yra pirminis( pirminis
+//skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
+
+
+function pirminisSkaicius(skaicius) {
+
+    if (typeof skaicius !== "number") {
+        return `Kintamasis nėra skaičius.`;
+    } else if (skaicius < 2) {
+        return ` ${skaicius} nėra pirminis skaičius `;
+    } else {
+        for (let i = 2; i <= Math.sqrt(skaicius); i++) {
+            if (skaicius % i === 0) {
+                return ` ${skaicius} nėra pirminis skaičius `;
+            }
+            return ` ${skaicius} yra pirminis skaičius `;
+        }
+    }
+
+}
+
+console.log(pirminisSkaicius(1));
+
+
+
 
 
 
