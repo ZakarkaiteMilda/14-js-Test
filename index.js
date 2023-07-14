@@ -32,3 +32,14 @@ for (let i = -1; i <= 10; i++) {
     i += 1;
     console.log(i);
 }
+
+console.clear();
+console.log(`------------------------`);
+
+//4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
+
+for (let i = 1; i <= 5; i++) {
+    let randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+    console.log(randomNumber);
+}
+
